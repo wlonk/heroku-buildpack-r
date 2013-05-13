@@ -72,6 +72,3 @@ cp -R -f /app/vendor/* $VENDOR_DIR
 cp -R -f /app/vendor/* $CACHE_DIR
 echo "$R_VERSION" > $CACHE_DIR/R/bin/.version
 
-echo "Installing some FORTRAN via apt-get for future use on rpy2 import." | indent
-apt-get install libgfortran3
-echo "Done with FORTRAN" | indent
