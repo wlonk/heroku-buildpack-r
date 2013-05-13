@@ -71,3 +71,7 @@ mkdir -p $VENDOR_DIR $CACHE_DIR
 cp -R -f /app/vendor/* $VENDOR_DIR
 cp -R -f /app/vendor/* $CACHE_DIR
 echo "$R_VERSION" > $CACHE_DIR/R/bin/.version
+
+echo "Installing FORTRAN from apt-get" | indent
+apt-get install libgfortran3
+echo "Done with FORTRAN." | indent
