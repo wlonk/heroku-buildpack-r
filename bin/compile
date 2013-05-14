@@ -41,6 +41,7 @@ else
 fi
 
 # need to copy the binaries to /app/vendor so that R works
+mkdir /app/vendor
 cp -R $VENDOR_DIR/* /app/vendor
 
 
