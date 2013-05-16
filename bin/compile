@@ -18,7 +18,7 @@ LP_DIR=`cd $(dirname $0); cd ..; pwd`
 BUILD_PACK_VERSION="20121005"
 R_VERSION="2.15.1"
 S3_BUCKET="heroku-buildpack-r"
-R_BINARIES="http://rbx13.herokuapp.com/output/79e2bb16-7427-4f45-82a1-fba95e0b6073"
+R_BINARIES="http://rbx2.herokuapp.com/output/844669b0-3eb2-4107-91a8-262a1cd72d34"
 VENDOR_DIR="$BUILD_DIR/vendor"
 R_HOME="$VENDOR_DIR/R"
 CRAN_MIRROR="http://cran.fhcrc.org"
@@ -29,16 +29,16 @@ mkdir -p $CACHE_DIR
 echo "Vendoring R $R_VERSION" | indent
 
 # Check if we can pull from cache rather than download tar
-if [ "$(cat $CACHE_DIR/R/bin/.version 2>/dev/null)" = "$R_VERSION" -a 5==6]
-then
-  echo "Desired R version ($R_VERSION) cached" | indent
-  mkdir -p $VENDOR_DIR
-  cp -R $CACHE_DIR/* $VENDOR_DIR
-else
+#if [ "$(cat $CACHE_DIR/R/bin/.version 2>/dev/null)" = "$R_VERSION" -a 5==6]
+#then
+#  echo "Desired R version ($R_VERSION) cached" | indent
+#  mkdir -p $VENDOR_DIR
+#  cp -R $CACHE_DIR/* $VENDOR_DIR
+#else
   # download and unpack binaries
   echo "Downloading and unpacking R binaries" | indent
   mkdir -p $VENDOR_DIR && curl $R_BINARIES -s -o - | tar xzf - -C $VENDOR_DIR
-fi
+#fi
 
 # need to copy the binaries to /app/vendor so that R works
 mkdir /app/vendor
