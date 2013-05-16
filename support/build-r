@@ -55,7 +55,7 @@ echo CPPFLAGS: $CPPFLAGS
 cd $basedir/R-$rversion/
 
 # ./configure --prefix=$prefix --without-x && make && make install
-./configure --prefix=$prefix --enable-R-shlib && make && make install
+./configure --prefix=$prefix --enable-R-shlib --with-x --with-libpng --with-jpeglib && make && make install
 
 # remove unneeded files to make the output smaller
 cd $vendordir
