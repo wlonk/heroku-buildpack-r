@@ -18,7 +18,7 @@ Example usage:
 $ ls
 init.r prog1.r prog2.r ...
 
-$ heroku create --stack cedar --buildpack http://github.com/virtualstaticvoid/heroku-buildpack-r.git
+$ heroku create --stack cedar --buildpack http://github.com/wlonk/heroku-buildpack-r.git
 
 $ git push heroku master
 ...
